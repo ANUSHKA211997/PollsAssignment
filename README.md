@@ -22,5 +22,5 @@
    - python manage.py makemigrations (for database createion)
    - python manage.py migrate (for coomiting changes in database)
    - python manage.py runserver (to start Django server)
-5. open "http://127.0.0.1:8000/"
+5. open "http://127.0.0.1:8000/polls"
 

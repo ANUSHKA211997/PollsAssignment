@@ -22,9 +22,6 @@ from . import views
 app_name='Polls'
 
 urlpatterns = [
-    # url(r'^$', views.IndexView.as_view(), name='index'),
-    # url(r'^(?P<pk>\d+)/$', views.DetailView.as_view(), name='detail'),
-    # url(r'^(?P<pk>\d+)/results/$', views.ResultsView.as_view(), name='results'),
     path('',views.FirstPage, name='First'),
     path('game/', GamePage, name='Front'),
     path('<int:pk>/question',views.questionList.as_view(),name='list'),
@@ -33,13 +30,5 @@ urlpatterns = [
     path('<int:pk>/<str:name>/track',views.crudTrack.as_view(),name='track'),
     path('<int:pk>/<str:name>/track',views.crudTrack.as_view(),name='track'),
 
-    #url('<int:question_id>/vote/', vote_count, name='vote_detail'),
-    # url(r'^(?P<question_id>\d+)/vote/$', vote_count, name='vote_detail'),
 ]
 
-# urlpatterns = [
-#
-    # path('game/', GamePage, name='Front'),
-    # path('polls/<int:pk>/', ChoicePage, name='detail'),
-    # url(r'polls/<int:pk>/vote', VoteCount, name='Vote'),
-# ]

@@ -104,33 +104,4 @@ def ResultView(request, pk):
     return render(request, 'Polls/ResultPage.html', result_list)
 
 
-# def ChoicePage(request,pk):
-#     try:
-#         question_c=Question.objects.get(pk=pk)
-#         choice={
-#             "que":question_c
-#         }
-#
-#     except Question.DoesNotExist:
-#         raise Http404("Question does not exist")
-#
-#     return  render(request,'Polls/VotePage.html',choice)
 
-
-
-#
-# def vote_count(request,question_id):
-#
-#     question=get_object_or_404(Question,pk=question_id)
-#     try:
-#         select=question.choice_set.get(pk=question_id)
-#         print(select)
-#     except (KeyError, Choice.DoesNotExist):
-#         return render(request,'Polls/VotePage.html',{ 'question': question,
-#                                                       'error_message':"Please select a choice and then proceed"})
-#
-#     else:
-#         select.votes+=1
-#         select.save()
-#         # id = question.id
-#         return render(request,'Polls/trial.html',{})
