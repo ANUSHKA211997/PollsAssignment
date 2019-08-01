@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question</title>
+</head>
+<body>
+<body>
+<h1>Choose From this Question List</h1>
+{% if que_list %}
+<ul>
+    {% for track in que_list.question_set.all %}
+    <li><a href="/polls/{{track.id}}/result/">{{track.question_txt}}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
+</body>
+</html>
