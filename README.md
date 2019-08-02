@@ -23,4 +23,7 @@
    - python manage.py migrate (for coomiting changes in database)
    - python manage.py runserver (to start Django server)
 5. open "http://127.0.0.1:8000/polls"
+6. Hit this url :  http://127.0.0.1:8000/polls/3/get/track for crud operation on track model
+7. http://127.0.0.1:8000/polls/1/question for question list
+
 

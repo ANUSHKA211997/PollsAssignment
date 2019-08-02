@@ -28,7 +28,5 @@ urlpatterns = [
     path('<int:pk>/', views.QuestionView, name='que'),
     path('<int:pk>/result/', views.ResultView, name='result'),
     path('<int:pk>/<str:name>/track',views.crudTrack.as_view(),name='track'),
-    path('<int:pk>/<str:name>/track',views.crudTrack.as_view(),name='track'),
-
 ]
 
