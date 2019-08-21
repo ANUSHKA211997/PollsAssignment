@@ -6,11 +6,11 @@
 </head>
 <body>
 <body>
-<h1>Choose From this Question List</h1>
+<h1 style="color:Blue">Choose From this Question List</h1>
 {% if que_list %}
 <ul>
     {% for track in que_list.question_set.all %}
-    <li><a href="/polls/{{track.id}}/result/">{{track.question_txt}}</a></li>
+    <li style="color:green"><a href="/polls/{{track.id}}/result/">{{track.question_txt}}</a></li>
     {% endfor %}
 </ul>
 {% endif %}

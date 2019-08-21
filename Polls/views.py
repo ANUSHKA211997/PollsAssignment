@@ -1,3 +1,4 @@
+from celery import task, shared_task
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.http import HttpResponse, Http404, HttpResponseRedirect
@@ -8,9 +9,13 @@ from .serializers import questionSerializer,trackSerializer
 
 class questionList(APIView):
     def get(self, request, pk, *args, **kwargs):
-        track=Track.objects.get(pk=pk).question_set.all()
-        tra=list(track.values())
-        serial=questionSerializer(track,many=True)
+
+        # track=Track.objects.get(pk=pk).question_set.all()
+        track = Track.objects.get(pk=pk)
+        que = Question.objects.filter(track=track)
+        # tra=list(track.values())
+        tra=list(que.values())
+        serial=questionSerializer(tra,many=True)
         return Response(serial.data)
 
 
@@ -47,7 +52,7 @@ def FirstPage(request):
     print("hello")
     return render(request,'Polls/FirstPage.html',{})
 
-
+@shared_task
 def GamePage(request):
     quest=Question.objects.all()
     track= Track.objects.all()
@@ -63,6 +68,7 @@ def QuestionView(request, pk):
     }
     return render(request,'Polls/QuestionPage.html',que_list)
 
+@shared_task
 def ResultView(request, pk):
     corr=0
     wrong=0
@@ -104,4 +110,6 @@ def ResultView(request, pk):
     return render(request, 'Polls/ResultPage.html', result_list)
 
 
-
+@shared_task
+def add(x, y):
+    print(x + y)

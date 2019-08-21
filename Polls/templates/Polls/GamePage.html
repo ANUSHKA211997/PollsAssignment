@@ -5,11 +5,11 @@
     <title>Guess the Correct Answer!!!</title>
 </head>
 <body>
-<h1>Choose From this Track List</h1>
+<h1 style="color:blue">Choose From this Track List</h1>
 {% if track_list %}
 <ul>
     {% for track in track_list %}
-    <li><a href="/polls/{{track.id}}">{{track.name}}</a></li>
+    <li style="color:green"><a href="/polls/{{track.id}}">{{track.name}}</a></li>
     {% endfor %}
 </ul>
 {% endif %}

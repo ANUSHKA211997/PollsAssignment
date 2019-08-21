@@ -5,12 +5,12 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Result</h1>
+<h1 style="color:Red">Result</h1>
 {% if resul_list %}
 <h1>{{resul_list.question_txt}}</h1>
 <ul>
     {% for track in resul_list.choice_set.all %}
-    <li><a href="">{{track.choice_txt}} </a>{% if track.corr_ans == track.choice_txt %} <h6>(this is flagged )</h6> {% endif %} {{ track.votes}}</li>
+    <li><a href="">{{track.choice_txt}} </a></li>{% if track.corr_ans == track.choice_txt %} <h6>(this is flagged )</h6> {% endif %} {{ track.votes}}
     {% endfor %}
 </ul>
 
